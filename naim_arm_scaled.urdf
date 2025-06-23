@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<robot name="naim_arm">
+  <link name="stand">
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/stand.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="govde">
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/govde.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="eklem">
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/eklem.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="kol">
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/kol.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="stand_to_govde" type="revolute">
+    <parent link="stand"/>
+    <child link="govde"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.57" upper="1.57" effort="1.0" velocity="1.0"/>
+  </joint>
+  <joint name="govde_to_eklem" type="revolute">
+    <parent link="govde"/>
+    <child link="eklem"/>
+    <origin xyz="0 0 0.3" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.57" upper="1.57" effort="1.0" velocity="1.0"/>
+  </joint>
+  <joint name="eklem_to_kol" type="revolute">
+    <parent link="eklem"/>
+    <child link="kol"/>
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="1.0" velocity="1.0"/>
+  </joint>
+
+</robot>

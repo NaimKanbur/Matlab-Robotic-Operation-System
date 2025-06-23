@@ -1,0 +1,77 @@
+🧠 Detaylı GPT Promptu: MATLAB Üzerinde Robot Simülasyonu ve Kontrol Arayüzü
+Merhaba, MATLAB R2024b kullanarak bir robot kol simülasyonu ve kontrol arayüzü (GUI) oluşturmak istiyorum. Proje boyunca STL dosyalarımı kullanarak hem fiziksel görselleştirme hem de kullanıcı etkileşimli bir kontrol sistemi kurmak istiyorum.
+
+Aşağıda tam olarak istediğim proje adımlarını detaylıca açıklıyorum. Ayrıca, daha önce bu tarz bir projede yaşadığım bazı problemleri de belirttim. Lütfen bu hatalara düşmeden doğru bir yapı oluştur ve her adımı açıklamalı olarak üret:
+
+⚙️ 1. Robot Yapısı ve Hareket Kabiliyeti
+Elimde 4 adet STL dosyası var:
+
+stand.stl (hareket etmeyen sabit zemin)
+
+govde.stl (standa bağlı, sadece Z ekseninde dönecek)
+
+eklem.stl (gövdeye bağlı, Y ekseninde dönecek)
+
+kol.stl (ekleme bağlı, belirli bir uzaydaki nokta etrafında Y ekseninde dönecek)
+
+URDF dosyasını oluşturmak istiyorum ama geçmişte şu hataları yaptım:
+❌ Joint'lere limit eklememiştim → importrobot() çalışmadı
+❌ Ekseni yanlış tanımlamıştım → kol örneğin X yerine Y ekseninde dönmeliydi
+❌ Kolun dönme noktası yanlış tanımlanmıştı → parçanın ucundan değil, orta yerinden dönüyordu
+✅ Bunları doğru tanımlayıp örnek URDF ve açıklamalarıyla birlikte oluştur
+
+🖥️ 2. GUI Arayüzü (App Designer veya klasik GUI)
+Kullanıcı slider'larıyla parçaları hareket ettirebilmeli
+
+Her parçanın yanında bir "🔒 sabitle" kutucuğu olmalı
+→ Sabitlendiğinde o parça sabit kalmalı
+
+"📷 Konumu Kaydet" butonuna basıldığında:
+
+Anlık pozisyon bir görsel olarak altta gösterilmeli
+
+Maksimum 5 konum kaydedilebilmeli
+
+Her konum kutusunun yanında ❌ butonu olmalı
+
+"▶️ Parkuru Başlat" butonuna basıldığında robot kayıtlı konumlara sırayla gitmeli
+
+🔊 3. Sesli Geri Bildirim
+Simülasyon başladığında “Parkur başlatıldı”
+
+Her konuma gidildiğinde “Adım 1 tamamlandı” gibi bir sesli geri bildirim gelsin
+
+Tüm adımlar tamamlandığında “Parkur tamamlandı” sesi gelsin
+
+💡 4. Görselleştirme & Detaylar
+Robotun görüntüsü trisurf ile STL parçaları kullanılarak çizilsin
+
+Işıklandırma, camlight ve lighting gouraud gibi özelliklerle gerçekçi olsun
+
+Görüntüleme alanı (axis) robotun tüm hareket alanını kapsasın
+❌ Geçmişte sadece 1x1x1 m gösteriliyordu → robot görünmüyordu
+
+📝 5. Dökümantasyon & Dosya Yapısı
+Projeyi adım adım anlatan bir Word/PDF dökümanı üret
+→ Başlık: “MATLAB Üzerinden Robot Kontrol Sistemi Oluşturma”
+→ Hazırlayan: Mustafa Naim KANBUR
+→ İçerik: STL görselleştirme, URDF dosyası, GUI açıklamaları, karşılaşılan zorluklar ve çözümler
+
+Görselleri (robot ve GUI) bu dökümana uygun yerleştir
+
+📤 Ekstra:
+Sonunda MATLAB’ı açmadan başlatabileceğim .exe veya .mlapp gibi bir yapı sunabilirsin
+
+Dosyaları robot_gui_pathplanner_snapshot_fixed.m gibi mantıklı bir isimle kaydet
+
+📩 İletişim
+Bu projeyi GitHub’a koymayı planlıyorum.
+README.md dosyasına şu satırı eklersen sevinirim:
+📬 Herhangi bir sorun için: naimmkanbur@gmail.com
+
+Bu prompt ile projeni yeniden inşa edecek biri:
+✅ Neyi yapması gerektiğini,
+✅ Hangi hatalardan kaçınması gerektiğini,
+✅ Ne çıktılar beklemesi gerektiğini çok net anlar.
+
+İstersen bu promptu PDF olarak da verebilirim ya da README altına ekleyebilirim. Hazırsan?

@@ -1,0 +1,55 @@
+🤖 MATLAB Robot Kontrol Paneli – Naim Arm GUI
+Bu proje, MATLAB ortamında STL dosyaları kullanılarak oluşturulmuş 3 serbestlik derecesine sahip (3-DOF) bir robot kolunun görsel olarak kontrol edilebildiği bir etkileşimli simülasyon ve planlama arayüzüdür.
+
+📌 Proje Özellikleri
+3B STL Tabanlı Robot Simülasyonu: Stand, gövde, eklem ve kol parçaları STL dosyalarından yüklenip gerçek boyutlarla modellenmiştir.
+
+URDF Entegrasyonu: MATLAB’in importrobot() fonksiyonu için gerekli URDF dosyası manuel olarak oluşturulmuş, her bağlantının konumu ve dönüş eksenleri doğru bir şekilde ayarlanmıştır.
+
+Etkileşimli GUI (Graphical User Interface):
+
+Slider'lar aracılığıyla gövde, eklem ve kolun dönme hareketleri yapılabilir.
+
+Anlık hareketlerde gerçek zamanlı görsel güncelleme sağlanır.
+
+"Konum Kaydet" butonu ile farklı pozisyonlar kayıt altına alınabilir.
+
+Kayıt edilen konumlar GUI üzerinde görsel minyatürler şeklinde gösterilir.
+
+Her kayıt silinebilir, maksimum 5 konum desteklenir.
+
+"Parkuru Başlat" butonuyla robot bu konumlara sırasıyla ulaşır.
+
+Sesli Geri Bildirim Sistemi: Başlangıç, adım geçişleri ve parkur tamamlandığında sistem sesli olarak bilgilendirir.
+
+Pozisyon Sabitleme: Kullanıcı isterse bir parçayı sabitleyip, o parçanın uç noktası değişmeden sistemi yeniden yönlendirebilir.
+
+Modern, mobil uygulama hissiyatında arayüz: R2024b ile uyumlu, sade ve işlevsel bir tasarım.
+
+🔧 Gereksinimler
+MATLAB R2024b (veya daha yeni)
+
+Robotics System Toolbox
+
+App Designer modülü (GUI için)
+
+STL dosyalarının proje klasöründe meshes/ altında bulunması
+
+naim_arm.urdf dosyasının aynı dizinde bulunması
+
+📁 Proje Dosyaları
+robot_gui_pathplanner_snapshot_fixed.mlapp → GUI uygulaması
+
+naim_arm.urdf → URDF dosyası
+
+meshes/ → STL parçaları (stand, gövde, eklem, kol)
+
+README.md → Bu açıklama dosyası
+
+images/ (isteğe bağlı) → Robot ve GUI görselleri
+
+👤 Proje Sahibi
+Bu proje Mustafa Naim KANBUR tarafından hazırlanmıştır.
+
+📝 Herhangi bir öneri, sorun ya da geliştirme talebiniz varsa bana şu adresten ulaşabilirsiniz:
+📬 naimmkanbur@gmail.com
